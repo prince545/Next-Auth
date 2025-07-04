@@ -34,9 +34,9 @@ export default function LoginPage() {
     setError('');
 
     try {
-      const res = await axios.post('/api/users/signup', user);
-      if (res.status === 200) {
-        router.push('/dashboard'); // Change to your desired page
+      const res = await axios.post('/api/users/login', user);
+      if (res.status === 200 && res.data.user?.id) {
+        router.push(`/profile/${res.data.user.id}`);
       }
     } catch (err: any) {
       setError(err.response?.data?.error || 'Login failed');
@@ -122,7 +122,7 @@ export default function LoginPage() {
             </form>
             <div className="mt-8 text-center text-sm">
               <p className="text-gray-400">
-                Don’t have an account?{' '}
+                Don't have an account?{' '}
                 <Link href="/signup" className="text-blue-400 hover:text-blue-300 underline">
                   Signup here
                 </Link>

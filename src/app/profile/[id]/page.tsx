@@ -1,11 +1,5 @@
 import React from 'react';
 
-interface UserProfileProps {
-  params: {
-    id: string;
-  };
-}
-
 export default function UserProfile({ params }: { params: { id: string } }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-black text-white">

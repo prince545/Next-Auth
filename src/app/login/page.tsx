@@ -38,8 +38,14 @@ export default function LoginPage() {
       if (res.status === 200 && res.data.user?.id) {
         router.push(`/profile/${res.data.user.id}`);
       }
-    } catch (err: any) {
-      setError(err.response?.data?.error || 'Login failed');
+    } catch (err: unknown) {
+      let msg = 'Login failed';
+      if (err && typeof err === 'object' && 'response' in err && err.response && typeof err.response === 'object' && 'data' in err.response && err.response.data && typeof err.response.data === 'object' && 'error' in err.response.data) {
+        msg = (err.response.data as any).error;
+      } else if (err instanceof Error) {
+        msg = err.message;
+      }
+      setError(msg);
     } finally {
       setLoading(false);
     }
@@ -122,7 +128,7 @@ export default function LoginPage() {
             </form>
             <div className="mt-8 text-center text-sm">
               <p className="text-gray-400">
-                Don't have an account?{' '}
+                Don&apos;t have an account?{' '}
                 <Link href="/signup" className="text-blue-400 hover:text-blue-300 underline">
                   Signup here
                 </Link>

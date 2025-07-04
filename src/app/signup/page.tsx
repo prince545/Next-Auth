@@ -115,7 +115,7 @@ export default function SignupPage() {
               <FaUserPlus size={32} />
             </span>
             <CardTitle className="text-2xl font-extrabold text-white">Create Account</CardTitle>
-            <p className="text-gray-300 text-sm">Sign up to get started. It's quick and easy.</p>
+            <p className="text-gray-300 text-sm">Sign up to get started. It&apos;s quick and easy.</p>
           </CardHeader>
           <CardContent>
             {error && (

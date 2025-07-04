@@ -1,24 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Modern Auth App
+
+A modern authentication app built with Next.js, Tailwind CSS, shadcn/ui, and Framer Motion. Inspired by Aceternity UI for a beautiful, professional user experience.
+
+## Features
+
+- Modern, responsive authentication pages (signup & login)
+
+- Accessible, animated UI using shadcn/ui and Framer Motion
+- Tailwind CSS for rapid, utility-first styling
+- Clean, professional design inspired by Aceternity UI
+- Easy to customize and extend
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Aceternity UI](https://ui.aceternity.com/) (design inspiration)
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies:**
+   ```sh
+   npm install
+   # If you haven't already, add shadcn/ui components:
+   npx shadcn add card input button
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. **Run the development server:**
+   ```sh
+   npm run dev
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Open your app:**
+   Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Illustrations:** Replace the SVG/image in `public/` for your own branding.
+- **UI Components:** Use more shadcn/ui or Aceternity UI patterns for additional pages.
+- **Styling:** Tweak Tailwind classes for your brand colors and style.
+
+## Folder Structure
+
+- `src/app/signup/page.tsx` – Signup page
+- `src/app/login/page.tsx` – Login page
+- `src/components/ui/` – shadcn/ui components
+- `public/` – Static assets (SVGs, images)
+
+## License
+
+MIT
 
 ## Learn More
 

@@ -40,8 +40,18 @@ export default function LoginPage() {
       }
     } catch (err: unknown) {
       let msg = 'Login failed';
-      if (err && typeof err === 'object' && 'response' in err && err.response && typeof err.response === 'object' && 'data' in err.response && err.response.data && typeof err.response.data === 'object' && 'error' in err.response.data) {
-        msg = (err.response.data as any).error;
+      if (
+        err &&
+        typeof err === 'object' &&
+        'response' in err &&
+        err.response &&
+        typeof err.response === 'object' &&
+        'data' in err.response &&
+        err.response.data &&
+        typeof err.response.data === 'object' &&
+        'error' in err.response.data
+      ) {
+        msg = (err.response.data as { error?: string }).error || msg;
       } else if (err instanceof Error) {
         msg = err.message;
       }

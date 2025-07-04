@@ -5,8 +5,7 @@ A slick, minimal, and beautiful authentication app built with Next.js, TypeScrip
 ---
 
 ## ✨ Features
-
-- 🎨 Gorgeous split-screen auth pages (Signup & Login)
+- **Modern UI**: Sleek, minimal, and beautiful design inspired by Aceternity UI.
 - 🧩 Built with shadcn/ui for accessible, customizable components
 - 💨 Styled with Tailwind CSS for rapid, utility-first design
 - 🎬 Smooth animations with Framer Motion

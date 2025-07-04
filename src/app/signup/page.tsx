@@ -78,8 +78,14 @@ export default function SignupPage() {
           router.push('/login?registered=true');
         }, 1500);
       }
-    } catch (err: any) {
-      setError(err.response?.data?.error || 'Registration failed. Please try again.');
+    } catch (err: unknown) {
+      let msg = 'Registration failed';
+      if (err && typeof err === 'object' && 'response' in err && err.response && typeof err.response === 'object' && 'data' in err.response && err.response.data && typeof err.response.data === 'object' && 'error' in err.response.data) {
+        msg = (err.response.data as any).error;
+      } else if (err instanceof Error) {
+        msg = err.message;
+      }
+      setError(msg);
     } finally {
       setLoading(false);
     }
@@ -223,7 +229,7 @@ export default function SignupPage() {
             </form>
             <div className="mt-8 text-center text-sm">
               <p className="text-gray-400">
-                Already have an account?{' '}
+                Don&apos;t have an account?{' '}
                 <Link href="/login" className="text-blue-400 hover:text-blue-300 underline">
                   Login here
                 </Link>
